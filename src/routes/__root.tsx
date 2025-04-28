@@ -1,20 +1,15 @@
-import {
-  HeadContent,
-  Outlet,
-  Scripts,
-  createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
-import TanstackQueryLayout from '../integrations/tanstack-query/layout'
+import TanstackQueryLayout from '../integrations/tanstack-query/layout';
 
-import appCss from '../styles.css?url'
+import appCss from '../styles.css?url';
 
-import type { QueryClient } from '@tanstack/react-query'
-import NotFound from '@/components/NotFound'
+import type { QueryClient } from '@tanstack/react-query';
+import NotFound from '@/components/NotFound';
 
 interface MyRouterContext {
-  queryClient: QueryClient
+  queryClient: QueryClient;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
@@ -48,7 +43,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     </RootDocument>
   ),
   notFoundComponent: () => <NotFound />,
-})
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -56,10 +51,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="max-w-full bg-gray-900">
         {children}
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
