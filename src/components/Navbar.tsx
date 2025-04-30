@@ -33,7 +33,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 z-50 flex h-screen w-full flex-col gap-4 bg-gray-950 p-4 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:flex-row md:items-center md:justify-end md:space-y-0 md:space-x-2 md:bg-transparent`}
+      className={`absolute top-0 left-0 z-50 flex h-screen w-full flex-col gap-4 bg-gray-950 p-4 transition-transform duration-300 md:relative ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:h-max md:translate-x-0 md:flex-row md:items-center md:justify-end md:space-y-0 md:space-x-2 md:bg-transparent`}
     >
       <button onClick={() => setIsOpen(!isOpen)} className="self-end text-white md:hidden">
         <X />
