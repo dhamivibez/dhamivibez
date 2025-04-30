@@ -33,7 +33,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 flex h-full w-full flex-col gap-4 bg-gray-950 p-4 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:flex-row md:items-center md:justify-end md:space-y-0 md:space-x-2 md:bg-transparent`}
+      className={`absolute top-0 left-0 z-50 flex h-screen w-full flex-col gap-4 bg-gray-950 p-4 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:flex-row md:items-center md:justify-end md:space-y-0 md:space-x-2 md:bg-transparent`}
     >
       <button onClick={() => setIsOpen(!isOpen)} className="self-end text-white md:hidden">
         <X />
@@ -43,7 +43,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
         <a
           key={link}
           href={link}
-          className="relative inline-block py-2 text-white after:absolute after:bottom-1.5 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
+          className="relative inline-block py-2 text-white after:transition-all after:duration-300 md:after:absolute md:after:bottom-1.5 md:after:left-1/2 md:after:h-[2px] md:after:w-0 md:after:bg-white md:hover:after:left-0 md:hover:after:w-full"
           onClick={() => setIsOpen(!isOpen)}
         >
           {name}
