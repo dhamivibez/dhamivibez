@@ -56,7 +56,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="max-w-full bg-gray-900">
+      <body className="max-w-full bg-gray-950">
         {children}
         <Scripts />
       </body>
