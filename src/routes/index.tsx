@@ -1,4 +1,6 @@
 import Header from '@/components/Header';
+import Hero from '@/components/sections/Hero';
+import Background from '@/components/ui/Background';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -7,8 +9,10 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <div className="mt-12">
+    <div className="max-w-full overflow-hidden">
+      <Background count={15} />
       <Header />
+      <Hero />
     </div>
   );
 }
