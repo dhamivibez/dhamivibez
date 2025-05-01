@@ -37,9 +37,9 @@ const Hero = () => {
           viewport={{ once: true }}
         >
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, type: 'spring', stiffness: 100 }}
             viewport={{ once: true }}
           >
             <Button
@@ -50,9 +50,9 @@ const Hero = () => {
             </Button>
           </motion.div>
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, type: 'spring', stiffness: 100 }}
             viewport={{ once: true }}
           >
             <Button
