@@ -1,4 +1,5 @@
 import { X } from 'lucide-react';
+import { motion } from 'motion/react';
 
 type NavbarProps = {
   isOpen: boolean;
@@ -40,14 +41,21 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
       </button>
 
       {navLinks.map(({ link, name }) => (
-        <a
+        <motion.a
           key={link}
           href={link}
           className="relative inline-block py-2 text-white after:transition-all after:duration-300 md:after:absolute md:after:bottom-1.5 md:after:left-1/2 md:after:h-[2px] md:after:w-0 md:after:bg-white md:hover:after:left-0 md:hover:after:w-full"
           onClick={() => setIsOpen(!isOpen)}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{
+            opacity: { duration: 0.5 },
+            y: { type: 'spring', stiffness: 200, damping: 10 },
+          }}
         >
           {name}
-        </a>
+        </motion.a>
       ))}
     </nav>
   );
