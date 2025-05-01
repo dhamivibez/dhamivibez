@@ -48,7 +48,7 @@ const About = () => {
           className="rounded-md border border-white/20 p-4 text-white shadow-md"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.4 }} // Trigger when 40% is visible
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <h4 className="mb-2 text-2xl font-semibold">Frontend</h4>
@@ -59,7 +59,7 @@ const About = () => {
                 className="rounded-lg bg-purple-600 px-2 py-1 text-[12px] hover:bg-purple-600/80"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }} // Trigger when 40% is visible
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 {name}
