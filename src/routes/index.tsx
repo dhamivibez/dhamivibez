@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import About from '@/components/sections/About';
 import Hero from '@/components/sections/Hero';
 import Background from '@/components/ui/Background';
 import { createFileRoute } from '@tanstack/react-router';
@@ -13,6 +14,7 @@ function App() {
       <Background count={15} />
       <Header />
       <Hero />
+      <About />
     </div>
   );
 }
