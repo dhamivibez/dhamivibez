@@ -44,9 +44,9 @@ const Hero = () => {
           >
             <Button
               className="bg-accent border-accent hover:bg-accent/80 cursor-pointer px-4 py-6 text-white hover:-translate-y-0.5"
-              onClick={() => (window.location.href = '#projects')}
+              onClick={() => (window.location.href = '#contact')}
             >
-              View Projects
+              Contact Me
             </Button>
           </motion.div>
           <motion.div
@@ -58,9 +58,9 @@ const Hero = () => {
             <Button
               variant="outline"
               className="border-accent hover:bg-accent/20 cursor-pointer bg-transparent px-4 py-6 text-white hover:-translate-y-0.5 hover:text-white"
-              onClick={() => (window.location.href = '#contact')}
+              onClick={() => (window.location.href = '#projects')}
             >
-              Contact Me
+              View Projects
             </Button>
           </motion.div>
         </motion.div>
