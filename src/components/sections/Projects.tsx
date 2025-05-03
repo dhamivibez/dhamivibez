@@ -30,7 +30,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="mt-20 mb-4 flex min-h-screen w-full scroll-mt-20 flex-col items-center text-white">
+    <section id="projects" className="mt-20 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
       <h2 className="relative mb-4 text-4xl font-semibold text-purple-600 after:absolute after:-bottom-1 after:left-1/2 after:h-1 after:w-[75%] after:-translate-x-1/2 after:rounded-md after:bg-gradient-to-r after:from-purple-500 after:via-fuchsia-500 after:to-pink-500 after:content-['']">
         Projects
       </h2>
