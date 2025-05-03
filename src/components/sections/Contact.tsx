@@ -26,7 +26,15 @@ const Contact = () => {
 
   return (
     <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
-      <h2 className="mb-4 text-4xl font-semibold text-purple-600">Contact</h2>
+      <motion.h2
+        className="mb-4 text-4xl font-semibold text-purple-600"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 1 }}
+      >
+        Contact
+      </motion.h2>
 
       <motion.form className="mt-4 w-[90%] max-w-sm space-y-4" onSubmit={handleSubmit}>
         <motion.input
