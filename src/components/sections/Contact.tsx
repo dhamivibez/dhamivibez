@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 const Contact = () => {
   const [contactData, setContactData] = useState({
@@ -21,11 +22,14 @@ const Contact = () => {
     console.log(contactData);
   };
 
+  const MotionButton = motion.create(Button);
+
   return (
     <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
       <h2 className="mb-4 text-4xl font-semibold text-purple-600">Contact</h2>
-      <form className="mt-4 w-[90%] max-w-sm space-y-4" onSubmit={handleSubmit}>
-        <input
+
+      <motion.form className="mt-4 w-[90%] max-w-sm space-y-4" onSubmit={handleSubmit}>
+        <motion.input
           type="text"
           id="name"
           name="name"
@@ -34,8 +38,12 @@ const Contact = () => {
           placeholder="Name"
           value={contactData.name}
           required
+          initial={{ transform: 'translateY(50px)', opacity: 0 }}
+          whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.4, once: true }}
         />
-        <input
+        <motion.input
           type="email"
           id="email"
           name="email"
@@ -43,8 +51,12 @@ const Contact = () => {
           className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 text-white transition focus:border-purple-600 focus:bg-purple-600/5 focus:outline-none"
           placeholder="Email"
           value={contactData.email}
+          initial={{ transform: 'translateY(50px)', opacity: 0 }}
+          whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.4, once: true }}
         />
-        <textarea
+        <motion.textarea
           id="message"
           name="message"
           onChange={handleChange}
@@ -52,12 +64,24 @@ const Contact = () => {
           className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 text-white transition focus:border-blue-500 focus:bg-blue-500/5 focus:outline-none"
           placeholder="Your Message..."
           value={contactData.message}
-        ></textarea>
-        <Button type="submit" className="w-full bg-purple-600 py-6 hover:bg-purple-600/90">
+          initial={{ transform: 'translateY(50px)', opacity: 0 }}
+          whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.4, once: true }}
+        ></motion.textarea>
+        <MotionButton
+          type="submit"
+          className="w-full bg-purple-600 py-6 hover:bg-purple-600/90"
+          initial={{ transform: 'translateY(50px)', opacity: 0 }}
+          whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.4, once: true }}
+        >
           Submit
-        </Button>
-      </form>
+        </MotionButton>
+      </motion.form>
     </section>
   );
 };
+
 export default Contact;
