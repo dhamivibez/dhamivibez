@@ -23,9 +23,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
-      <h2 className="relative mb-4 text-4xl font-semibold text-purple-600 after:absolute after:-bottom-1 after:left-1/2 after:h-1 after:w-[75%] after:-translate-x-1/2 after:rounded-md after:bg-gradient-to-r after:from-purple-500 after:via-fuchsia-500 after:to-pink-500 after:content-['']">
-        Contact
-      </h2>
+      <h2 className="mb-4 text-4xl font-semibold text-purple-600">Contact</h2>
       <form className="mt-4 w-[90%] max-w-sm space-y-4" onSubmit={handleSubmit}>
         <input
           type="text"

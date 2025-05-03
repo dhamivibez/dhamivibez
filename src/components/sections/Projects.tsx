@@ -31,9 +31,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="mt-20 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
-      <h2 className="relative mb-4 text-4xl font-semibold text-purple-600 after:absolute after:-bottom-1 after:left-1/2 after:h-1 after:w-[75%] after:-translate-x-1/2 after:rounded-md after:bg-gradient-to-r after:from-purple-500 after:via-fuchsia-500 after:to-pink-500 after:content-['']">
-        Projects
-      </h2>
+      <h2 className="mb-4 text-4xl font-semibold text-purple-600">Projects</h2>
       <div className="mt-4 grid w-[90%] grid-cols-1 gap-6 sm:grid-cols-2 md:w-[80%] lg:grid-cols-3">
         {projects.map(({ name, description, github, demo }, index) => (
           <div
