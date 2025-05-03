@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import About from '@/components/sections/About';
 import Hero from '@/components/sections/Hero';
+import Projects from '@/components/sections/Projects';
 import Background from '@/components/ui/Background';
 import { createFileRoute } from '@tanstack/react-router';
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <Projects />
     </div>
   );
 }
