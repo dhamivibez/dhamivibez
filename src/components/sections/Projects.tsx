@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import { LuGithub } from 'react-icons/lu';
+import { motion } from 'motion/react';
 
 const Projects = () => {
   const projects = [
@@ -31,11 +32,23 @@ const Projects = () => {
 
   return (
     <section id="projects" className="mt-20 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
-      <h2 className="mb-4 text-4xl font-semibold text-purple-600">Projects</h2>
+      <motion.h2
+        className="mb-4 text-4xl font-semibold text-purple-600"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 1 }}
+      >
+        Projects
+      </motion.h2>
       <div className="mt-4 grid w-[90%] grid-cols-1 gap-6 sm:grid-cols-2 md:w-[80%] lg:grid-cols-3">
         {projects.map(({ name, description, github, demo }, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ transform: 'translateY(50px)', opacity: 0 }}
+            whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
             className="flex min-h-[150px] flex-col justify-between rounded-md border border-white/20 bg-purple-900/10 p-4 text-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-1 hover:border-purple-600 hover:shadow-xl hover:shadow-purple-600/30"
           >
             <div>
@@ -62,7 +75,7 @@ const Projects = () => {
                 <ExternalLink size={18} /> Demo
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
