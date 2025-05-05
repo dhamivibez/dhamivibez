@@ -57,7 +57,7 @@ const Hero = () => {
           >
             <Button
               variant="outline"
-              className="border-accent hover:bg-accent/20 hover: cursor-pointer bg-transparent px-4 py-6 hover:-translate-y-0.5"
+              className="border-accent hover:bg-accent/20 cursor-pointer bg-transparent px-4 py-6 hover:-translate-y-0.5 hover:text-white"
               onClick={() => (window.location.href = '#projects')}
             >
               View Projects
