@@ -1,13 +1,15 @@
-import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { motion } from 'motion/react';
-
+import axios from 'axios';
+import { toast } from 'sonner';
+import { Loader2 } from 'lucide-react';
 const Contact = () => {
   const [contactData, setContactData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,10 +21,16 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(contactData);
+    setLoading(true);
+    try {
+      await axios.post('https://dhamivibez-contact.dhamivibez.workers.dev/contact', contactData);
+      toast.success('Message sent successfully!');
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || 'Server error occurred.');
+    } finally {
+      setLoading(false);
+    }
   };
-
-  const MotionButton = motion.create(Button);
 
   return (
     <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
@@ -77,16 +85,19 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           viewport={{ amount: 0.4, once: true }}
         ></motion.textarea>
-        <MotionButton
+        <motion.button
           type="submit"
-          className="w-full bg-purple-600 py-6 hover:bg-purple-600/90"
+          disabled={loading}
+          className="inline-flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-purple-600 px-4 py-2 hover:bg-purple-600/90 disabled:cursor-not-allowed disabled:bg-neutral-500"
           initial={{ transform: 'translateY(50px)', opacity: 0 }}
           whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
+          animate={{ transform: 'translateY(0px)', opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ amount: 0.4, once: true }}
         >
+          {loading ? <Loader2 size={18} className="animate-spin" /> : ''}
           Submit
-        </MotionButton>
+        </motion.button>
       </motion.form>
     </section>
   );

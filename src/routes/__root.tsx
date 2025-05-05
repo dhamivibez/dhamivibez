@@ -2,6 +2,7 @@ import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanst
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 import TanstackQueryLayout from '../integrations/tanstack-query/layout';
+import { Toaster } from 'sonner';
 
 import appCss from '../styles.css?url';
 
@@ -57,6 +58,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="max-w-full bg-gray-950">
+        <Toaster
+          position="top-center"
+          expand
+          toastOptions={{ style: { background: '#030712', borderColor: 'rgba(255, 255, 255, 0.05)', color: 'white' } }}
+        />
         {children}
         <Scripts />
       </body>
