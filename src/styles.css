@@ -24,6 +24,7 @@ code {
 
 html {
   scroll-behavior: smooth;
+  color: white;
 }
 
 @custom-variant dark (&:is(.dark *));

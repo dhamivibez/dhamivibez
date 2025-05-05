@@ -31,7 +31,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="mt-20 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
+    <section id="projects" className="mt-20 mb-4 flex w-full scroll-mt-20 flex-col items-center">
       <motion.h2
         className="mb-4 text-4xl font-semibold text-purple-600"
         initial={{ y: 50, opacity: 0 }}
@@ -49,7 +49,7 @@ const Projects = () => {
             whileInView={{ transform: 'translateY(0px)', opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-            className="flex min-h-[150px] flex-col justify-between rounded-md border border-white/20 bg-purple-900/10 p-4 text-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-1 hover:border-purple-600 hover:shadow-xl hover:shadow-purple-600/30"
+            className="flex min-h-[150px] flex-col justify-between rounded-md border border-white/20 bg-purple-900/10 p-4 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-1 hover:border-purple-600 hover:shadow-xl hover:shadow-purple-600/30"
           >
             <div>
               <h3 className="text-xl font-semibold text-purple-400">{name}</h3>

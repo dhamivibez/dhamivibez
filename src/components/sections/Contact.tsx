@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center text-white">
+    <section id="contact" className="mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center">
       <motion.h2
         className="mb-4 text-4xl font-semibold text-purple-600"
         initial={{ y: 50, opacity: 0 }}
@@ -50,7 +50,7 @@ const Contact = () => {
           id="name"
           name="name"
           onChange={handleChange}
-          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 text-white transition focus:border-purple-600 focus:bg-purple-600/5 focus:outline-none"
+          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 transition focus:border-purple-600 focus:bg-purple-600/5 focus:outline-none"
           placeholder="Name"
           value={contactData.name}
           required
@@ -64,7 +64,7 @@ const Contact = () => {
           id="email"
           name="email"
           onChange={handleChange}
-          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 text-white transition focus:border-purple-600 focus:bg-purple-600/5 focus:outline-none"
+          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 transition focus:border-purple-600 focus:bg-purple-600/5 focus:outline-none"
           placeholder="Email"
           value={contactData.email}
           initial={{ transform: 'translateY(50px)', opacity: 0 }}
@@ -77,7 +77,7 @@ const Contact = () => {
           name="message"
           onChange={handleChange}
           rows={5}
-          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 text-white transition focus:border-blue-500 focus:bg-blue-500/5 focus:outline-none"
+          className="w-full rounded border border-white/10 bg-white/5 px-4 py-3 transition focus:border-blue-500 focus:bg-blue-500/5 focus:outline-none"
           placeholder="Your Message..."
           value={contactData.message}
           initial={{ transform: 'translateY(50px)', opacity: 0 }}

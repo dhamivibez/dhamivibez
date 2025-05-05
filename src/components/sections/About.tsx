@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="mt-4 flex w-full scroll-mt-20 flex-col items-center text-white">
+    <section id="about" className="mt-4 flex w-full scroll-mt-20 flex-col items-center">
       <motion.h2
         className="mb-4 text-4xl font-semibold text-purple-600"
         initial={{ y: 50, opacity: 0 }}
@@ -33,7 +33,7 @@ const About = () => {
       </motion.h2>
       <div className="grid w-[90%] grid-cols-1 gap-6 md:w-[70%] md:grid-cols-3">
         <motion.p
-          className="col-span-1 rounded-md border border-white/20 p-4 text-white shadow-md md:col-span-3 md:p-6"
+          className="col-span-1 rounded-md border border-white/20 p-4 shadow-md md:col-span-3 md:p-6"
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -45,7 +45,7 @@ const About = () => {
         </motion.p>
 
         <motion.div
-          className="rounded-md border border-white/20 p-4 text-white shadow-md"
+          className="rounded-md border border-white/20 p-4 shadow-md"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -69,7 +69,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="rounded-md border border-white/20 p-4 text-white shadow-md"
+          className="rounded-md border border-white/20 p-4 shadow-md"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -93,7 +93,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="rounded-md border border-white/20 p-4 text-white shadow-md"
+          className="rounded-md border border-white/20 p-4 shadow-md"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}

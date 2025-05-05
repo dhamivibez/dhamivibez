@@ -10,7 +10,7 @@ const Header = () => {
         Dhami<span className="text-white">vibez</span>
       </h1>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Menu className="text-white md:hidden" onClick={() => setIsOpen(!isOpen)} />
+      <Menu className="md:hidden" onClick={() => setIsOpen(!isOpen)} />
     </header>
   );
 };
