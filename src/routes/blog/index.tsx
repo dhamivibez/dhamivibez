@@ -1,4 +1,4 @@
-import ComingSoon from '@/components/ComingSoon';
+import BlogHeader from '@/components/BlogHeader';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/blog/')({
@@ -8,7 +8,7 @@ export const Route = createFileRoute('/blog/')({
 function RouteComponent() {
   return (
     <div>
-      <ComingSoon />
+      <BlogHeader />
     </div>
   );
 }
