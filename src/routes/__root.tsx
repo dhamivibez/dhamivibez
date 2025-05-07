@@ -1,13 +1,10 @@
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-
-import TanstackQueryLayout from '../integrations/tanstack-query/layout';
 import { Toaster } from 'sonner';
-
 import appCss from '../styles.css?url';
-
 import type { QueryClient } from '@tanstack/react-query';
 import NotFound from '@/components/NotFound';
+// import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+// import TanstackQueryLayout from '../integrations/tanstack-query/layout';
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -43,9 +40,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   component: () => (
     <RootDocument>
       <Outlet />
-      <TanStackRouterDevtools />
-
-      <TanstackQueryLayout />
+      {/* <TanStackRouterDevtools />
+      <TanstackQueryLayout /> */}
     </RootDocument>
   ),
   notFoundComponent: () => <NotFound />,
