@@ -180,3 +180,117 @@ html {
     opacity: 0;
   }
 }
+
+@layer base {
+  h1 {
+    @apply my-6 text-3xl font-bold;
+  }
+
+  h2 {
+    @apply mt-5 mb-2 text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply mt-4 mb-1 text-xl font-medium;
+  }
+  pre {
+    background: rgba(15, 23, 42, 0.9); /* semi-transparent slate-900 */
+    border-radius: 0.5rem;
+    border: 1px solid #1e293b; /* subtle border - slate-800 */
+    color: #e5e7eb; /* zinc-100 */
+    font-family: 'JetBrainsMono', monospace;
+    font-size: 0.85rem;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    white-space: pre;
+    box-shadow:
+      0 0 0 1px #0f172a inset,
+      0 0 10px rgba(148, 163, 184, 0.1);
+  }
+
+  code {
+    display: inline-block;
+    min-width: 100%;
+    background: none;
+    color: inherit;
+    font-size: 0.85rem;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  /* Comments / Quotes */
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-zinc-500 italic;
+  }
+
+  /* Variables / Tags / Attributes / Selectors */
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-attribute,
+  .hljs-tag,
+  .hljs-regexp,
+  .hljs-link,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    @apply text-pink-400;
+  }
+
+  /* Numbers / Built-ins / Meta / Params */
+  .hljs-number,
+  .hljs-meta,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params {
+    @apply text-yellow-400;
+  }
+
+  /* Strings / Symbols / Bullets */
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet {
+    @apply text-green-400;
+  }
+
+  /* Titles / Sections */
+  .hljs-title,
+  .hljs-section {
+    @apply text-amber-300;
+  }
+
+  /* Keywords / Tags */
+  .hljs-keyword,
+  .hljs-selector-tag {
+    @apply text-sky-400;
+  }
+
+  /* Emphasis / Strong */
+  .hljs-emphasis {
+    @apply italic;
+  }
+
+  .hljs-strong {
+    @apply font-bold;
+  }
+
+  div[data-youtube-video] {
+    @apply flex w-full justify-center py-2;
+
+    & iframe {
+      @apply h-max w-[90%] rounded-md border-2 border-white md:min-h-120;
+    }
+  }
+
+  blockquote {
+    @apply my-4 border-l-3 border-gray-300 pl-2 text-gray-600 italic;
+  }
+
+  hr {
+    @apply my-6 h-[0.5px] border-none bg-purple-600;
+  }
+}

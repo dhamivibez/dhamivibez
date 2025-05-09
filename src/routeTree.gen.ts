@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as BlogIndexImport } from './routes/blog/index'
+import { Route as AdminBlogCreateImport } from './routes/admin/blog.create'
 
 // Create/Update Routes
 
@@ -25,6 +26,12 @@ const IndexRoute = IndexImport.update({
 const BlogIndexRoute = BlogIndexImport.update({
   id: '/blog/',
   path: '/blog/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AdminBlogCreateRoute = AdminBlogCreateImport.update({
+  id: '/admin/blog/create',
+  path: '/admin/blog/create',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,6 +53,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexImport
       parentRoute: typeof rootRoute
     }
+    '/admin/blog/create': {
+      id: '/admin/blog/create'
+      path: '/admin/blog/create'
+      fullPath: '/admin/blog/create'
+      preLoaderRoute: typeof AdminBlogCreateImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogIndexRoute
+  '/admin/blog/create': typeof AdminBlogCreateRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blog': typeof BlogIndexRoute
+  '/admin/blog/create': typeof AdminBlogCreateRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/admin/blog/create': typeof AdminBlogCreateRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog'
+  fullPaths: '/' | '/blog' | '/admin/blog/create'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog'
-  id: '__root__' | '/' | '/blog/'
+  to: '/' | '/blog' | '/admin/blog/create'
+  id: '__root__' | '/' | '/blog/' | '/admin/blog/create'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  AdminBlogCreateRoute: typeof AdminBlogCreateRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogIndexRoute: BlogIndexRoute,
+  AdminBlogCreateRoute: AdminBlogCreateRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +116,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/blog/"
+        "/blog/",
+        "/admin/blog/create"
       ]
     },
     "/": {
@@ -105,6 +125,9 @@ export const routeTree = rootRoute
     },
     "/blog/": {
       "filePath": "blog/index.tsx"
+    },
+    "/admin/blog/create": {
+      "filePath": "admin/blog.create.tsx"
     }
   }
 }
