@@ -12,14 +12,20 @@ import Link from '@tiptap/extension-link';
 import Image from '@tiptap/extension-image';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { toast } from 'sonner';
+import supabase from '@/lib/supabase';
+import slugify from 'slugify';
+import { Loader2Icon } from 'lucide-react';
 
 const lowlight = createLowlight(all);
 
 const BlogEditor = () => {
   const savedContent = localStorage.getItem('editor-content');
   const initialContent = savedContent ? JSON.parse(savedContent) : null;
+  const [isLoading, setIsLoading] = useState(false);
 
   const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [blogContent, setBlogContent] = useState(initialContent);
 
   const content = savedContent ? JSON.parse(savedContent) : null;
@@ -67,22 +73,54 @@ const BlogEditor = () => {
     },
   });
 
-  const submit = () => {
-    if (!title || !blogContent) {
-      console.log('Title and Content are required');
-    } else {
-      console.log(blogContent);
+  const submit = async () => {
+    setIsLoading(true);
+    try {
+      if (!title || !description || !blogContent) {
+        return toast.error('All fields are required');
+      }
+      const slug = slugify(title, { lower: true, strict: true });
+      const { error } = await supabase.from('blogs').insert({ title, slug, description, content: blogContent });
+      if (error) {
+        console.log(error);
+        return toast.error(error.message);
+      }
+      toast.success('Blog Created Successfully');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="m-auto my-8 w-[90%] max-w-4xl space-y-4">
-      <Input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Blog Title" />
+      <Input
+        type="text"
+        className="border-purple-600 focus-visible:ring-purple-600"
+        name="title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Blog Title"
+      />
+      <Input
+        type="text"
+        className="border-purple-600 focus-visible:ring-purple-600"
+        name="description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Blog Description"
+      />
       <div className="space-y-2">
         <MenuBar editor={editor} />
         <EditorContent editor={editor} />
         <div className="flex justify-end">
-          <Button className="bg-purple-600 hover:bg-purple-600/80" onClick={submit}>
+          <Button
+            onClick={submit}
+            disabled={isLoading}
+            className={`flex w-1/8 items-center justify-center gap-2 bg-purple-600 hover:bg-purple-600/80 ${isLoading ? 'cursor-not-allowed' : ''}`}
+          >
+            {isLoading && <Loader2Icon className="h-4 w-4 animate-spin" />}
             Submit
           </Button>
         </div>
