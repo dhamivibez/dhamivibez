@@ -1,8 +1,13 @@
-import { defineConfig } from '@tanstack/react-start/config'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from '@tanstack/react-start/config';
+import viteTsConfigPaths from 'vite-tsconfig-paths';
+import tailwindcss from '@tailwindcss/vite';
+import { cloudflare } from 'unenv';
 
 const config = defineConfig({
+  server: {
+    preset: 'cloudflare-pages',
+    unenv: cloudflare,
+  },
   tsr: {
     appDirectory: 'src',
   },
@@ -15,6 +20,6 @@ const config = defineConfig({
       tailwindcss(),
     ],
   },
-})
+});
 
-export default config
+export default config;
