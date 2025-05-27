@@ -20,12 +20,6 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
       link: '#projects',
       name: 'Projects',
     },
-
-    {
-      link: '/blog',
-      name: 'Blog',
-    },
-
     {
       link: '#contact',
       name: 'Contact',
