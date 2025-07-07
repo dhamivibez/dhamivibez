@@ -57,14 +57,7 @@ const Projects = () => {
             </div>
 
             <div className="mt-6 flex justify-between gap-4">
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-md border border-white/20 px-4 py-2 text-sm transition hover:bg-white/10"
-              >
-                <LuGithub size={18} /> GitHub
-              </a>
+              
 
               <a
                 href={demo}
