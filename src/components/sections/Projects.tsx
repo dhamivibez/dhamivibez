@@ -5,28 +5,19 @@ import { motion } from 'motion/react';
 const Projects = () => {
   const projects = [
     {
-      name: 'LocalEats',
-      description: 'Modern landing page for restaurants with a bold hero, menu preview, and contact info — built to drive bookings.',
-      demo: 'https://localeats-demo.vercel.app',
-      github: 'https://github.com/youruser/localeats',
+      name: 'Flowzen',
+      description: 'Modern landing page for AI automation platform with sleek design, workflow builder showcase, and integration demos — built to drive sign-ups.',
+      demo: 'https://flowzen.pages.dev',
     },
     {
-      name: 'SharpCuts',
-      description: 'Stylish landing page tailored for barbershops with services, pricing, and customer testimonials, optimized for mobile bookings.',
-      demo: 'https://sharpcuts-demo.vercel.app',
-      github: 'https://github.com/youruser/sharpcuts',
+      name: 'Jokes Generator',
+      description: 'Simple web app for generating random jokes with clean interface, category selection, and one-click humor — built to deliver instant laughs.',
+      demo: 'https://jokes-generator.pages.dev/',
     },
     {
-      name: 'Cleanly',
-      description: 'Sleek, trust-driven landing page for local home cleaning services, featuring service tiers and CTA for quotes.',
-      demo: 'https://cleanly-demo.vercel.app',
-      github: 'https://github.com/youruser/cleanly',
-    },
-    {
-      name: 'Eventify',
-      description: 'Event landing page with RSVP form, event details, and social sharing links to drive participation.',
-      demo: 'https://eventify-demo.vercel.app',
-      github: 'https://github.com/youruser/eventify',
+      name: 'Auth System',
+      description: 'Clean authentication demo app with login/signup forms, secure user management, and session handling — built to showcase modern auth implementation.',
+      demo: 'https://auth-system-wnp.pages.dev/',
     },
   ];
 
