@@ -34,7 +34,7 @@ It features:
 
 ## Explore My Work
 
-> [dhamivibez.pages.dev](https://dhamivibez.pages.dev)
+> [dhamivibez.name.ng](https://dhamivibez.name.ng)
 
 ---
 
