@@ -12,7 +12,7 @@ I’m a full-stack developer focused on crafting fast, scalable web apps with cl
 TypeScript
 
 **Frameworks**  
-React · Express · Hono · Elysia
+React/NextJS · Express · Hono · Elysia
 
 **Tools & Platforms**  
 PNPM · Bun · Vite · Supabase
