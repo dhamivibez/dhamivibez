@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
 
 import SocialIcons from '@/components/ui/SocialIcons';
+import { submitContactForm } from '@/utils';
 
 const Contact = () => {
   const [contactData, setContactData] = useState({
@@ -21,21 +22,22 @@ const Contact = () => {
     }));
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   try {
-  //     await axios.post('https://dhamivibez-contact.dhamivibez.workers.dev/contact', contactData);
-  //     toast.success('Message sent successfully!');
-  //   } catch (error: any) {
-  //     toast.error(error?.response?.data?.message || 'Server error occurred.');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await submitContactForm({ data: contactData });
+      toast.success('Message sent successfully!');
+      setContactData({ name: '', email: '', message: '' });
+    } catch (error: any) {
+      toast.error(error?.message || 'Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <section id='contact' className='mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center'>
+    <section id='contact' className='mt-24 mb-4 flex w-full scroll-mt-20 flex-col items-center' onSubmit={handleSubmit}>
       <motion.h2
         className='mb-4 text-4xl font-semibold text-purple-600'
         initial={{ y: 50, opacity: 0 }}
