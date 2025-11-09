@@ -1,19 +1,10 @@
-import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-
-import TanstackQueryLayout from '../integrations/tanstack-query/layout';
-import { Toaster } from 'sonner';
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
+import { TanStackDevtools } from '@tanstack/react-devtools';
 
 import appCss from '../styles.css?url';
 
-import type { QueryClient } from '@tanstack/react-query';
-import NotFound from '@/components/NotFound';
-
-interface MyRouterContext {
-  queryClient: QueryClient;
-}
-
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
@@ -24,7 +15,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Dhamivibez',
+        title: 'TanStack Start Starter',
       },
     ],
     links: [
@@ -32,38 +23,31 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: 'stylesheet',
         href: appCss,
       },
-      {
-        rel: 'icon',
-        href: 'favicon.ico',
-        type: 'image/x-icon',
-      },
     ],
   }),
 
-  component: () => (
-    <RootDocument>
-      <Outlet />
-      <TanStackRouterDevtools />
-
-      <TanstackQueryLayout />
-    </RootDocument>
-  ),
-  notFoundComponent: () => <NotFound />,
+  shellComponent: RootDocument,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
         <HeadContent />
       </head>
-      <body className="max-w-full bg-gray-950">
-        <Toaster
-          position="top-center"
-          expand
-          toastOptions={{ style: { background: '#030712', borderColor: 'rgba(255, 255, 255, 0.05)', color: 'white' } }}
-        />
+      <body className='max-w-full bg-gray-950'>
         {children}
+        <TanStackDevtools
+          config={{
+            position: 'bottom-right',
+          }}
+          plugins={[
+            {
+              name: 'Tanstack Router',
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
+        />
         <Scripts />
       </body>
     </html>

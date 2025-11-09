@@ -1,16 +1,16 @@
 {
-  "framework": "react",
-  "typescript": true,
-  "projectName": ".",
+  "projectName": "dhamivibez",
   "mode": "file-router",
+  "typescript": true,
   "tailwind": true,
-  "packageManager": "pnpm",
-  "toolchain": "eslint+prettier",
-  "variableValues": {},
+  "packageManager": "bun",
+  "addOnOptions": {},
   "git": true,
   "version": 1,
-  "existingAddOns": [
-    "start",
-    "tanstack-query"
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "eslint",
+    "shadcn",
+    "start"
   ]
 }
