@@ -9,10 +9,10 @@ I’m a full-stack developer focused on crafting fast, scalable web apps with cl
 ##  Tech I Use
 
 **Languages**  
-TypeScript
+JavaScript(TypeScript)
 
 **Frameworks**  
-React/NextJS · Express · Hono · Elysia
+React/NextJS · Express · Hono · Elysia · Tanstack Start
 
 **Tools & Platforms**  
 PNPM · Bun · Vite · Supabase
