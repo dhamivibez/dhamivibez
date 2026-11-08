@@ -17,7 +17,7 @@ export const submitContactForm = createServerFn({ method: 'POST' })
       const { name, email, message } = data;
 
       const { error } = await resend.emails.send({
-        from: 'Contact Form <contact@dhamivibez.name.ng>',
+        from: 'Contact Form <contact@dhamivibez.dev>',
         to: 'dhamivibez@gmail.com',
         subject: `New Contact Form Submission from ${name}`,
         html: `
