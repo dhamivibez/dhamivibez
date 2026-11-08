@@ -25,12 +25,12 @@ const Background = ({ count = 10 }) => {
 
   return (
     <>
-      <div className="bg-space"></div>
-      <div className="pointer-events-none fixed inset-0 z-[-1]">
+      <div className='bg-space'></div>
+      <div className='pointer-events-none fixed inset-0 z-[-1]'>
         {stars.map((star, i) => (
           <span
             key={i}
-            className="star"
+            className='star'
             style={{
               top: star.top,
               left: star.left,

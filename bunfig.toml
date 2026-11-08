@@ -1,0 +1,8 @@
+[fmt]
+semi = true
+singleQuote = true
+jsxSingleQuote = true
+printWidth = 150
+trailingComma = "all"
+sortTailwindcss = true
+ignorePatterns = ["bun.lock", "src/routeTree.gen.ts"]

@@ -11,7 +11,7 @@ const contactSchema = z.object({
 });
 
 export const submitContactForm = createServerFn({ method: 'POST' })
-  .inputValidator(contactSchema)
+  .validator(contactSchema)
   .handler(async ({ data }) => {
     try {
       const { name, email, message } = data;
